@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Text Analyser</title>
+</head>
+
+<body>
+    <h1>This is an Simple text analyser</h1>
+    <textarea name="text-input" rows="10" cols="50" id="text-input" placeholder="Enter your text here..."></textarea>
+    <button id="analyze-button">Analyze Text</button>
+    <div id="analysis-result"></div>
+
+
+    <script>
+
+        //  take all the documents putted inside the html
+
+        const textInput = document.getElementById('text-input');
+        const analyzeButton = document.getElementById('analyze-button');
+        const analysisResult = document.getElementById('analysis-result');
+
+
+        analyzeButton.addEventListener("click", function () {
+
+            // To get the text from input textarea
+            const text = textInput.value;
+
+            // Perform basic analysis 
+            const wordCount = text.split(/\s+/).length - 1;   // Count words (excluding last empty space)
+            const characterCount = text.length;
+
+
+            // Display the analysis results
+
+analysisResult.innerHTML = `<b> Word Count: </b> ${wordCount} <br> <br> Character Count: </b> ${characterCount}`;
+
+        });
+
+
+
+    </script>
+</body>
+
+</html>
